@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- view层 模板  -->
+    <div id="app">
+        <!-- 组件: 传递给组件的值 : props -->
+        <spf v-for='item in items' v-bind:item='item'></spf>
+    </div>
+
+    <!-- 导入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        //定义一个vue组件
+        Vue.component("spf", {
+            props: ['item'],
+            template: '<li>{{item}}</li>'
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: ['Java', 'linux', 'css']
+            }
+
+        })
+    </script>
+</body>
+
+</html>
